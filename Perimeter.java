@@ -11,42 +11,24 @@ class Perimeter
         breadth=imp.nextDouble();
         System.out.println("Enter the radius of the circle");
         radius=imp.nextDouble();
-        Rectangle rect = new Rectangle(length,breadth);
-        System.out.println("Length = " + rect.length);
-        System.out.println("Breadth = " + rect.breadth);
-        System.out.println("Perimeter = " + rect.getPerimeter());
-        Circle cir = new Circle(radius);
-        System.out.println("Radius = " +cir.radius);
-        System.out.println("Perimeter = " + cir.getPerimeter());
+        Shapes obj = new Shapes(length,breadth);
+        obj=new Shapes(radius);
     }
 }
 
-class Rectangle
+class Shapes
 {
-    double length;
-    double breadth;
-
-    Rectangle(double length,double breadth)
+    Shapes(double length,double breadth)
     {
-        this.length = length;
-        this.breadth = breadth;
+        double perimeter= 2 * (length + breadth);
+        System.out.println("\nLength = " +length);
+        System.out.println("Breadth = " +breadth);
+        System.out.println("Perimeter = " + perimeter);
     }
-    double getPerimeter() 
-    {
-        return 2 * (length + breadth);
-    }
-}
-class Circle
-{
-    double radius;
-    
-    Circle(double radius)
-    {
-        this.radius = radius;
-    }
-    double getPerimeter() 
+    Shapes(double radius)
     {
         double p = 2*3.14* radius;
-        return p;
+        System.out.println("Radius = " +radius);
+        System.out.println("Perimeter = " + p);
     }
 }
